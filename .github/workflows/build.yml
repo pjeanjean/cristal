@@ -6,13 +6,13 @@ on:
 jobs:
 
   electronlinux:
-    runs-on: ubuntu-22.10
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
   electronwin:
-    runs-on: ubuntu-22.10
+    runs-on: windows-latest
   electronmac:
-    runs-on: ubuntu-22.10
+    runs-on: macos-latest
