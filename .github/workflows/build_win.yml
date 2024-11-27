@@ -5,16 +5,17 @@ on:
   push:
 jobs:
   electron:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4.1.0
       - uses: pnpm/action-setup@v4
       - run: pnpm install
       - run: pnpm run build
-      - run: pnpm run --filter @xwiki/cristal-electron linux
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run --filter @xwiki/cristal-electron win
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: electron_linux
+          path: dist/@xwikicristal-electron-*-arm64.dmg
