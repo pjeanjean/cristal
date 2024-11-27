@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push:
 jobs:
-
   electronlinux:
     runs-on: ubuntu-latest
     steps:
@@ -14,5 +13,9 @@ jobs:
         uses: actions/setup-node@v4.1.0
   electronwin:
     runs-on: windows-latest
+    steps:
+      - run: echo "To be implemented"
   electronmac:
     runs-on: macos-latest
+    steps:
+      - run: echo "To be implemented"
