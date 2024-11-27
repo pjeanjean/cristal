@@ -4,17 +4,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-22.10
+
   electronlinux:
     runs-on: ubuntu-22.10
-    needs:
-      - build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
   electronwin:
     runs-on: ubuntu-22.10
-    needs:
-      - build
   electronmac:
     runs-on: ubuntu-22.10
-    needs:
-      - build
