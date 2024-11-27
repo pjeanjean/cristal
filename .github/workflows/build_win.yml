@@ -13,3 +13,5 @@ jobs:
       - run: pnpm install
       - run: pnpm run build
       - run: pnpm run --filter @xwiki/cristal-electron win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
