@@ -1,0 +1,20 @@
+name: Electron Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.10
+  electronlinux:
+    runs-on: ubuntu-22.10
+    needs:
+      - build
+  electronwin:
+    runs-on: ubuntu-22.10
+    needs:
+      - build
+  electronmac:
+    runs-on: ubuntu-22.10
+    needs:
+      - build
