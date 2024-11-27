@@ -17,5 +17,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
-          name: electron_linux
-          path: dist/@xwikicristal-electron-*-arm64.dmg
+          name: electron_linux_deb
+          path: electron/dist/@cristal/cristal-electron_*_amd64.deb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: electron_linux_targz
+          path: electron/dist/@cristal/cristal-electron-*.tar.gz
