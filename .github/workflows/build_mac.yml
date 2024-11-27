@@ -18,4 +18,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: electron_mac
-          path: dist/@xwikicristal-electron-*-arm64.dmg
+          path: electron/dist/@xwikicristal-electron-*-arm64.dmg
