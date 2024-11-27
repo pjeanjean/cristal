@@ -1,17 +1,20 @@
-name: Electron Build for Windows
+name: Electron Build for Linux
 
 on:
   workflow_dispatch:
   push:
 jobs:
   electron:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4.1.0
       - uses: pnpm/action-setup@v4
       - run: pnpm install
       - run: pnpm run build
+      - run: pnpm run --filter @xwiki/cristal-electron linux
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm run --filter @xwiki/cristal-electron win
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
