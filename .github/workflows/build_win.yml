@@ -18,4 +18,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: electron_windows_exe
-          path: electron/dist/@xwikicrisal-electron Setup *.exe
+          path: electron/dist/@xwiki/cristal-electron-setup-*.exe*
