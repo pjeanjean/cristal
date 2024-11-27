@@ -7,18 +7,24 @@ jobs:
   electronlinux:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.1.0
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.1.0
+      - uses: pnpm/action-setup@v4
+      - run: pnpm run build
+      - run: pnpm run --filter @xwiki/cristal-electron linux
   electronwin:
     runs-on: windows-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.1.0
-#  electronmac:
-#    runs-on: macos-latest
-#    steps:
-#      - run: echo "To be implemented"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.1.0
+      - uses: pnpm/action-setup@v4
+      - run: npm run build
+      - run: pnpm run --filter @xwiki/cristal-electron win
+  electronmac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4.1.0
+      - uses: pnpm/action-setup@v4
+      - run: pnpm run build
+      - run: pnpm run --filter @xwiki/cristal-electron mac
