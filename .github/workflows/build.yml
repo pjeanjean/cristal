@@ -11,11 +11,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.1.0
-  electronwin:
-    runs-on: windows-latest
-    steps:
-      - run: echo "To be implemented"
-  electronmac:
-    runs-on: macos-latest
-    steps:
-      - run: echo "To be implemented"
+#  electronwin:
+#    runs-on: windows-latest
+#    steps:
+#      - run: echo "To be implemented"
+#  electronmac:
+#    runs-on: macos-latest
+#    steps:
+#      - run: echo "To be implemented"
