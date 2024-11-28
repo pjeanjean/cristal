@@ -18,7 +18,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: electron_linux_deb
-          path: electron/dist/@xwiki/cristal-electron-*-amd64.deb
+          path: electron/dist/@xwiki/cristal-electron_*_amd64.deb
       - run: ls electron/dist
       - run: ls electron/dist/@xwiki
       - uses: actions/upload-artifact@v4
