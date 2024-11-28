@@ -15,9 +15,7 @@ jobs:
       - run: pnpm run --filter @xwiki/cristal-electron win
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: ls electron/dist
-      - run: ls electron/dist/@xwiki
       - uses: actions/upload-artifact@v4
         with:
           name: electron_windows_exe
-          path: electron/dist/@xwiki/cristal-electron-setup-*.exe*
+          path: electron/dist/@xwikicristal-electron Setup *.exe
