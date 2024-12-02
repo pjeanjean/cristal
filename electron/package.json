@@ -18,7 +18,7 @@
     "clean": "rimraf dist",
     "electron": "cross-env MODE=production electron-builder build --config .electron-builder.config.js --dir --config.asar=true",
     "linux": "electron-builder --linux deb tar.gz --config .electron-builder.config.js --dir --config.asar=true",
-    "mac": "electron-builder --mac dmg --config .electron-builder.config.js --dir --config.asar=true",
+    "mac": "electron-builder --mac dmg --config .electron-builder.config.js --dir --config.asar=true --config.defaultArch=universal",
     "prepackage": "cross-env MODE=production electron-builder -mwl --config .electron-builder.config.js --dir --config.asar=true",
     "package": "pnpm prepackage && mkdir -p dist/@cristal && pnpm linux",
     "start": "electron .",
